@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="w-75 m-auto my-5">
+        <h1 class="h2 text-center my-3">Project Management System</h1>
+        <div class="form-floating mb-3">
+            <input oninput="validateForm(this)" type="text" class="form-control " id="productName" placeholder="productName">
+            <div class="alert alert-danger py-1 mt-2 d-none">
+                <small>product name must start uppercase then...</small>
+            </div>
+            <label for="productName">productName</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" oninput="validateForm(this)" class="form-control " id="productPrice" placeholder="productPrice">
+            <div class="alert alert-danger py-1 mt-2 d-none">
+                <small>product price must between 1000 to 100000 </small>
+            </div>
+            <label for="productPrice">productPrice</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input list="catagory" oninput="validateForm(this)" type="text" class="form-control" id="productCatagory" placeholder="productCatagory">
+            <div class="alert alert-danger py-1 mt-2 d-none">
+                <small>product catagory must choose between this ...</small>
+            </div>
+            <label for="productCatagory">productCatagory</label>
+        </div>
+
+        <datalist id="catagory">
+            <option value="Mopiles"></option>
+            <option value="Laptops"></option>
+            <option value="Tv"></option>
+            <option value="Screens"></option>
+        </datalist>
+
+        <div class="form-floating mb-3 py-1 mt-2 ">
+            <textarea oninput="validateForm(this)" class="form-control" id="productDescription" placeholder="productDescription"></textarea>
+            <div class="alert alert-danger d-none">
+                <small>product description must enter enything from 3 char or more...</small>
+            </div>
+            <label for="productDescription">productDescription</label>
+        </div>
+        <button id="addInput" onclick=" addProduct()" class="btn btn-outline-secondary">addProduct</button>
+        <button id="updateInput" onclick="updateProduct() " class="btn btn-outline-success d-none">updateProduct</button>
+
+        <div class="form-floating mt-4">
+            <input oninput="searchProduct()" type="text" class="form-control" id="searchInput" placeholder="searchInput">
+            <label for="searchInput">search by name</label>
+          </div>
+         
+          
+        <table class="table my-3">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Catagory</th>
+                <th scope="col">Description</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tableRow">
+              
+             
+            </tbody>
+          </table>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
